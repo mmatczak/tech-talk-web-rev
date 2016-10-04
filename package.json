@@ -1,0 +1,40 @@
+{
+  "name": "tech-talk-web-rev",
+  "version": "1.0.0",
+  "description": "Presentation for tech talk titled: Web Revolution",
+  "scripts": {
+    "start": "browser-sync start --config bs-config.js",
+    "build": "jspm bundle js/main --inject",
+    "buildSafeMode": "jspm bundle-sfx js/main safe-bundle.js",
+    "devMode": "jspm unbundle"
+  },
+  "keywords": [
+    "reveal"
+  ],
+  "author": [
+    "Bartek Pietrowski",
+    " Marek Matczak"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "2.14.3",
+    "eslint": "3.4.0",
+    "eslint-config-standard": "6.0.0",
+    "eslint-plugin-promise": "2.0.1",
+    "eslint-plugin-standard": "2.0.0",
+    "jspm": "0.16.45"
+  },
+  "jspm": {
+    "dependencies": {
+      "css": "github:systemjs/plugin-css@^0.1.27",
+      "json": "github:systemjs/plugin-json@^0.1.2",
+      "reveal": "github:hakimel/reveal.js@3.3.0",
+      "text": "github:systemjs/plugin-text@^0.0.8"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
