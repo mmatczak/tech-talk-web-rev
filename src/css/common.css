@@ -1,0 +1,201 @@
+:root {
+  --primary-color: #00488D;
+  --secondary-color: #2E97C4;
+  --tertiary-color: #ffef34;
+  --fallback-color: black;
+  --bg-color: white;
+  --link-color: lightgreen;
+
+  --primary-font-family: 'Open Sans Condensed';
+  --secondary-font-family: 'Lobster Two';
+  --tertiary-font-family: 'Pacifico';
+}
+
+
+/*
+ ---------    General look  -----------
+*/
+html body {
+    background-color: var(--bg-color);
+}
+
+.reveal .slides .flippedColor {
+    color: var(--bg-color);
+}
+
+.reveal .slides .primaryColor {
+    color: var(--primary-color);
+}
+
+.reveal .slides .secondaryColor {
+    color: var(--secondary-color);
+}
+
+.reveal .slides .tertiaryColor {
+    color: var(--tertiary-color);
+}
+
+.reveal .slides .fallbackColor {
+    color: var(--fallback-color);
+}
+
+.reveal .slides .primaryFont {
+    font-family: var(--primary-font-family);
+}
+
+.reveal .slides .secondaryFont {
+    font-family: var(--secondary-font-family)
+}
+
+.reveal .slides .tertiaryFont {
+    font-family: var(--tertiary-font-family)
+}
+
+
+.reveal p, .reveal ul li, .reveal ol li {
+     font-family:  var(--primary-font-family);
+}
+
+.reveal .slides h3 {
+     text-transform: none;
+}
+
+.reveal .slides h1, 
+.reveal .slides h2, 
+.reveal .slides h3 {
+     color: var(--primary-color);
+     font-family: var(--primary-font-family)
+}
+
+
+.reveal .slides a:link {
+    color: var(--link-color);
+}
+
+.reveal .slides a:visited {
+    color: var(--link-color);
+}
+
+.reveal .slides button {
+    background: var(--bg-color);
+    padding: 0.5em;
+    margin: 0.5em;
+    font-size: 20px;
+    border: 2px solid #0098FF;
+    border-radius: 5px;
+    color: var(--primary-color);
+}
+
+.reveal .slides button:hover {
+    background: #0098FF;
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--bg-color);
+}
+
+
+/*---------------------------------*/
+
+
+.reveal .replacement {
+    position: relative;
+}
+
+.reveal .replacement .fragment {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+
+/*
+ ---------    Slide specific  -----------
+*/
+
+ #intro .chrome-image {
+     width:1.5em; 
+     height:1.5em; 
+     vertical-align: bottom;
+ }
+
+ #intro .fragment {
+      margin-top: 3em;
+ }
+
+
+ .reveal .author-footer {
+     margin-top: 3em;
+     float: right
+}
+ .reveal .author-footer-by {
+     margin-right: 0.5em;
+     font-size: 0.8em;
+}
+
+
+/*
+ ---------    Utility  -----------
+*/
+
+.reveal section::before {
+    height: inherit !important;
+    width: inherit !important;
+}
+
+.reveal section::after {
+    box-shadow: none !important;
+}
+
+.reveal section img.plain {
+    background: white;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal section img.no-margin {
+    margin: 0;
+}
+
+.reveal section .middle {
+    vertical-align: middle;
+}
+
+.reveal ul.no-bullets {
+    list-style-type: none;
+}
+
+.reveal .slides .inline {
+    display: inline;
+    margin: auto
+}
+
+.reveal .slides .noTransform {
+    text-transform: none;
+}
+
+.reveal .slides .lowercase {
+    text-transform: lowercase;
+}
+
+.reveal kbd {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 11px;
+    line-height: 1.4;
+    text-shadow: 0 1px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    padding: .1em .6em;
+    margin: 0 .1em;
+    white-space: nowrap;
+    box-shadow: 0 1px 0 rgba(0,0,0,.2),0 0 0 2px #fff inset;
+    border-radius: 3px;
+    font-family: monospace;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    font-size: 16px;
+}
