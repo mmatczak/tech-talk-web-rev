@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/jspm_packages/github/hakimel/reveal.js@3.3.0/css/reveal.css">
     <link rel="stylesheet" href="/jspm_packages/github/hakimel/reveal.js@3.3.0/css/theme/white.css">
     <link rel="stylesheet" href="/src/css/common.css">
+    <link rel="stylesheet" href="/src/css/solarized-light.css">
 
 </head>
 
@@ -25,6 +26,19 @@
                 <h1 style="font-size: 3em; margin-bottom: -0.25em;" class="fallbackColor" >Just</h1>
                 <h1 style="font-size: 4.5em; margin-bottom: -0.25em;" class="primaryColor" >like</h1>
                 <h1 style="font-size: 5em;"class="flippedColor" >that</h1>
+            </section>
+
+            <section>
+                <h3>Declaring and using variables</h3>
+                <pre><code class="css" data-trim data-noescape>
+:root {
+--main-color: #06c;
+}
+
+#foo h1 {
+color: var(--main-color);
+}
+               </code></pre>
             </section>
 
         </div>
