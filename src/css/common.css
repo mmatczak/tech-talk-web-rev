@@ -96,7 +96,8 @@ html body {
     border-radius: 5px;
     color: var(--bg-color);
 }
-.reveal .slide-background.present {
+
+.reveal .slide-background.present iframe {
     opacity: 0.4;
 }
 
