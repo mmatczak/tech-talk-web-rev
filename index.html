@@ -25,7 +25,7 @@
             <section data-background-color="var(--secondary-color)">
                 <h1 style="font-size: 3em; margin-bottom: -0.25em;" class="fallbackColor" >Just</h1>
                 <h1 style="font-size: 4.5em; margin-bottom: -0.25em;" class="primaryColor" >like</h1>
-                <h1 style="font-size: 5em;"class="flippedColor" >that</h1>
+                <h1 style="font-size: 5em;" class="flippedColor" >that</h1>
             </section>
 
             <section>
@@ -40,6 +40,188 @@ color: var(--main-color);
 }
                </code></pre>
             </section>
+
+            <section>
+                <img src="src/img/js-logo-small.png">
+                <h1 style="font-size: 4.5em; margin-bottom: -0.25em;" class="primaryColor" >What's</h1>
+                <h1 style="font-size: 3em; margin-bottom: -0.25em;" class="fallbackColor" >new?</h1>
+            </section>
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 3em; margin-bottom: -0.25em;" class="fallbackColor">We have</h1>
+                <h1 style="font-size: 3.5em;  text-transform: none" class="flippedColor" >ECMAScript 2015!</h1>
+                <h1 style="font-size: 1.5em; margin-bottom: -0.25em; text-transform: none" class="primaryColor" >Let's go through a few of its highlights...</h1>
+            </section>
+            <section>
+            <section>
+                <h3>ES2015 Classes</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+class Shape {
+    constructor(x, y) {
+        this.move(x, y);
+    }
+    move(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+class Rectangle extends Shape {
+    constructor(x, y, width, height) {
+        super(x, y);
+        this.width = width;
+        this.height = height;
+    }
+}
+                </code></pre>
+                <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+            </section>
+            <section>
+                <h3>ES5 Constructor Functions and Prototypal Inheritance</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+var Shape = function (x, y) {
+    this.move(x, y);
+};
+Shape.prototype.move = function (x, y) {
+    this.x = x;
+    this.y = y;
+};
+var Rectangle = function (width, height) {
+    this.width = width;
+    this.height = height;
+};
+Rectangle.prototype = new Shape(1, 5);
+var smallRectangle = new Rectangle(10, 20);
+                </code></pre>
+                <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+            </section>
+            </section>
+
+            <section>
+                <section>
+                    <h3>ES2015 Arrow Functions / Lexical <span style="font-family: monospace">this</span></h3>
+                <pre><code class="javascript" data-trim data-noescape>
+class Classroom {
+    constructor() {
+        this.students = [
+                    {name: 'Joe', isMyFriend: false},
+                    {name: 'Eric', isMyFriend: true}];
+        this.anyFriendThere = false;
+    }
+
+    checkIfAnyFriendThere() {
+        this.students.forEach((student) => {
+            if (student.isMyFriend) {
+                this.anyFriendThere = true;
+            }
+        });
+    }
+}
+                </code></pre>
+                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+                </section>
+                <section>
+                    <h3>ES5 <span style="font-family: monospace">bind()</span></h3>
+                <pre><code class="javascript" data-trim data-noescape>
+var classroom = {
+    students: [
+        {name: 'Joe', isMyFriend: false},
+        {name: 'Eric', isMyFriend: true}],
+    anyFriendThere: false,
+
+    checkIfAnyFriendThere: function () {
+        this.students.forEach(function (student) {
+            if (student.isMyFriend) {
+                this.anyFriendThere = true;
+            }
+        }.bind(this)); // binds this to the function context
+    }
+};
+                </code></pre>
+                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+                </section>
+                <section>
+                    <img src="src/img/ben-halpern-tweet.png">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h3>ES2015 Promises</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+let sayHello = function (name) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => resolve(`Hello ${name}`), 1000);
+    });
+};
+
+sayHello('Joe')
+    .then((helloToJoe) => {
+        console.log(`Someone says: ${helloToJoe}`);
+        return sayHello('Eric');
+    })
+    .then((helloToEric) => {
+        console.log(`Someone says: ${helloToEric}`);
+    });
+                </code></pre>
+                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+                </section>
+                <section>
+                    <h3>ES5 callbacks</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+var sayHello = function (name, onSuccess) {
+    setTimeout(function () {
+        onSuccess('Hello ' + name);
+    }, 1000);
+};
+
+sayHello('Joe', function (helloToJoe) {
+    console.log('Someone says: ' + helloToJoe);
+    sayHello('Eric', function (helloToEric) {
+        console.log('Someone says: ' + helloToEric);
+    });
+});
+                </code></pre>
+                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h3>ES2015 Module Exports / Imports</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+// greeter.js
+export function sayHelloTo(name) {
+    return `Hello ${name}`;
+}
+
+// my-code.js
+import {sayHelloTo} from './greeter';
+
+console.log(sayHelloTo('Joe'));
+                </code></pre>
+                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+                </section>
+                <section>
+                    <h3>ES5 Namespace Pattern</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+// greeter.js
+var myNamespace = {};
+myNamespace.sayHelloTo = function (name) {
+    return `Hello ${name}`;
+};
+
+// my-code.js
+console.log(myNamespace.sayHelloTo('Joe'));
+                </code></pre>
+                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+
+                </section>
+            </section>
+
 
         </div>
     </div>
