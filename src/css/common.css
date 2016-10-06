@@ -92,6 +92,9 @@ html body {
     border-radius: 5px;
     color: var(--bg-color);
 }
+.reveal .slide-background.present {
+    opacity: 0.4;
+}
 
 
 /*---------------------------------*/

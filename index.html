@@ -223,6 +223,252 @@ console.log(myNamespace.sayHelloTo('Joe'));
             </section>
 
 
+
+
+
+
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 4.9em; margin-bottom: -0.25em;" class="fallbackColor" >Offline</h1>
+                <h1 style="font-size: 4.5em; margin-bottom: -0.25em;" class="primaryColor" >caching</h1>
+                <h1 style="font-size: 4.1em;"class="flippedColor" >dilemma</h1>
+            </section>
+           
+
+            <!--http://alistapart.com/article/application-cache-is-a-douchebag-->
+            <section>
+                <h3>AppCache lottery</h3>
+                <ul class="no-bullets">
+                    <li>Files always come from cache</li>
+                    <li>Application updates only on manifest content change</li>
+                    <li>Additional not alternative cache</li>
+                    <li>Non-cached resources do not load on cached page</li>
+                    <li>lack of JavaScript API</li>
+                </ul>
+            </section>
+
+
+
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 2.0em; margin-bottom: -0.25em;" class="fallbackColor" >Service Workers</h1>
+                <h1 style="font-size: 2.3em; margin-bottom: -0.25em;" class="primaryColor" >Return power</h1>
+                <h1 style="font-size: 2.7em;"class="flippedColor" >to the devs!</h1>
+            </section>
+
+
+            <section>
+                <h3>Service Workers</h3>
+                <ul class="no-bullets">
+                    <li>Give developers the moving parts to solve their problems</li>
+                    <li>Alow to create own caching patterns</li>
+                </ul>
+            </section>
+
+            
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 2.4em; margin-bottom: 0em;" class="fallbackColor" >Wait wait wait!</h1>
+                <h1 style="font-size: 1.95em; margin-bottom: -0.25em;" class="primaryColor" >But what are those</h1>
+                <h1 style="font-size: 4em;"class="flippedColor" >workers?</h1>
+            </section>
+
+
+  <!--https://www.html5rocks.com/en/tutorials/workers/basics/-->
+              <section>
+                    <h3>Workers</h3>
+                    <ul class="no-bullets">
+                        <li>Isolated thread</li>
+                        <li>Code contained in separate file (async download)</li>
+                        <li>Communication via message passing - postMessage()</li>
+                        <li>Messages copied, not shared</li>
+                        <li>Same Origin</li>
+                    </ul>
+              </section>
+
+            <section>
+                <h3>Main script:</h3>
+                <pre><code class="js" data-trim data-noescape>
+var worker = new Worker('task.js');
+
+worker.addEventListener('message', function(e) {
+  console.log('Worker said: ', e.data);
+}, false);
+
+worker.addEventListener('error', function(e){
+    console.log('ERROR: Line', e.lineno, 'in', 
+        e.filename, ':', e.message);
+}, false);
+
+worker.postMessage('Hello World'); // Send data to our worker.
+               </code></pre>
+
+                <h3>task.js (the worker)</h3>
+                <pre><code class="js" data-trim data-noescape>
+self.addEventListener('message', function(e) {
+  self.postMessage(e.data);
+}, false);
+               </code></pre>
+            </section>
+
+              <section>
+                    <h3>Features Available to Workers</h3>
+                    <ul class="no-bullets">
+                        <li>The navigator object</li>
+                        <li>The location object (read-only)</li>
+                        <li><XMLHttpRequest></XMLHttpRequest></li>
+                        <li>setTimeout()/clearTimeout() and setInterval()/clearInterval()</li>
+                        <li>The Application Cache</li>
+                        <li>Importing external scripts using the importScripts() method</li>
+                        <li>Spawning other web workers</li>
+                    </ul>
+              </section>
+
+              <section>
+                    <h3>Workers do NOT have access to:</h3>
+                    <ul class="no-bullets">
+                        <li>The DOM (it's not thread-safe)</li>
+                        <li>The window object</li>
+                        <li>The document object</li>
+                        <li>The parent object</li>
+                        <li>will not run locally (e.g. from file://)</li>
+                    </ul>
+              </section>
+
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 2em; margin-bottom: 0em;" class="fallbackColor" >The</h1>
+                <h1 style="font-size: 2.5em; margin-bottom: 0em;" class="primaryColor" >cache</h1>
+                <h1 style="font-size: 3em;"class="flippedColor" >machine</h1>
+            </section>
+
+            <!--https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/-->
+            <section>
+                <h3>On install - as a dependency</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-install-dep.png">
+            </section>
+
+
+            <section>
+                <h3>On install - as a dependency</h3>
+                <pre><code class="js" data-trim data-noescape>
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('mysite-static-v3').then(function(cache) {
+      return cache.addAll([
+        '/css/whatever-v3.css',
+        '/css/imgs/sprites-v6.png',
+        '/css/fonts/whatever-v8.woff',
+        '/js/all-min-v4.js'
+        // etc
+      ]);
+    })
+  );
+});
+               </code></pre>
+            </section>
+
+            <section>
+                <h3>On install - not as a dependency</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-install-not.png">
+            </section>
+
+
+            <section>
+                <h3>On install - not as a dependency</h3>
+                <pre><code class="js" data-trim data-noescape>
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('mygame-core-v1').then(function(cache) {
+      cache.addAll(
+        // levels 11-20
+      );
+      return cache.addAll(
+        // core assets & levels 1-10
+      );
+    })
+  );
+});
+               </code></pre>
+            </section>
+
+
+            <section>
+                <h3>On activate - cleanup</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-activate.png">
+            </section>
+
+
+            <section>
+                <h3>On activate - cleanup</h3>
+                <pre><code class="js" data-trim data-noescape>
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          // Return true if you want to remove this cache,
+          // but remember that caches are shared across
+          // the whole origin
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
+               </code></pre>
+            </section>
+
+
+            <section>
+                <h3>On user interaction</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-user-interaction.png">
+            </section>
+
+
+            <section>
+                <h3>On user interaction</h3>
+                <pre><code class="js" data-trim data-noescape>
+document.querySelector('.cache-article').addEventListener('click', function(event) {
+  event.preventDefault();
+
+  var id = this.dataset.articleId;
+  caches.open('mysite-article-' + id).then(function(cache) {
+    fetch('/get-article-urls?id=' + id).then(function(response) {
+      // /get-article-urls returns a JSON-encoded array of
+      // resource URLs that a given article depends on
+      return response.json();
+    }).then(function(urls) {
+      cache.addAll(urls);
+    });
+  });
+});
+               </code></pre>
+            </section>
+
+
+            <section>
+                <h1>And more ...</h1>
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/cm-on-network-response.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/cm-stale-while-revalidate.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/cm-on-push.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/cm-on-bg-sync.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-cache-only.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-network-only.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-falling-back-to-network.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-cache-and-network-race.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-network-falling-back-to-cache.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-cache-then-network.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-generic-fallback.png">
+                <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-sw-side-templating.png">
+            </section>
+
+
+            <section data-background-iframe="https://jakearchibald.github.io/isserviceworkerready/">
+                <h1 style="font-size: 3.0em;" class="fallbackColor" >Can we use <a href="https://jakearchibald.github.io/isserviceworkerready/">it</a>?</h1>
+            </section>
+
+
+
+
+
         </div>
     </div>
 
