@@ -300,6 +300,9 @@ export class HelloComponent {
                 <ul class="no-bullets">
                     <li>Give developers the moving parts to solve their problems</li>
                     <li>Alow to create own caching patterns</li>
+                    <li>Can be only used over HTTPS (excluding localhost)</li>
+                    <li>Hijack connections</li>
+                    <li>Fabricate, and filter responses</li>
                 </ul>
             </section>
 
@@ -346,7 +349,9 @@ self.addEventListener('message', function(e) {
 }, false);
                </code></pre>
 
-                <a href="https://www.html5rocks.com/en/tutorials/workers/basics/" class="credits" target="_blank">Code from https://www.html5rocks.com/en/tutorials/workers/basics/</a>
+                <p>
+                    <a href="https://www.html5rocks.com/en/tutorials/workers/basics/" class="credits" target="_blank">Code from https://www.html5rocks.com/en/tutorials/workers/basics/</a>
+                </p>
                
             </section>
 
@@ -374,13 +379,63 @@ self.addEventListener('message', function(e) {
                     </ul>
               </section>
 
+            <section>
+                <h1 style="font-size: 2em; margin-bottom: 0em;" class="fallbackColor" >Now</h1>
+                <h1 style="font-size: 2.5em; margin-bottom: 0em;" class="primaryColor" >back to</h1>
+                <h1 style="font-size: 3em;" class="secondaryColor" >service workers</h1>
+            </section>
+
+            
+            <section>
+                <h3>Service worker lifecycle</h3>
+                <p style="font-size: 0.5em; margin-top:-1em">(on first installation)</p>
+                <img class="plain" style="max-height: 11em;" src="/src/img/sw-lifecycle.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" class="credits" target="_blank">Image from Google Web Fundamentals</a>
+                </p>
+            </section>
+
+
+            <section>
+                <h3>Register a service worker</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(function(registration) {
+        // Registration was successful
+        console.log('Registration successful with scope: ', 
+            registration.scope);
+    }).catch(function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+    });
+}
+                </code></pre>
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" class="credits" target="_blank">Code from Google Web Fundamentals</a>
+                </p>
+            </section>
+
+
+            <section>
+                <h3>Install a service worker</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+self.addEventListener('install', function(event) {
+  // Perform install steps
+});
+                </code></pre>
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" class="credits" target="_blank">Code from Google Web Fundamentals</a>
+                </p>
+            </section>
+
             <section data-background-color="var(--secondary-color)">
                 <h1 style="font-size: 2em; margin-bottom: 0em;" class="fallbackColor" >The</h1>
                 <h1 style="font-size: 2.5em; margin-bottom: 0em;" class="primaryColor" >cache</h1>
                 <h1 style="font-size: 3em;" class="flippedColor" >machine</h1>
             </section>
 
-            <!--https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/-->
+
             <section>
                 <h3>On install - as a dependency</h3>
                 <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-install-dep.png">
@@ -489,20 +544,23 @@ self.addEventListener('activate', function(event) {
             <section>
                 <h3>On user interaction</h3>
                 <pre><code class="javascript" data-trim data-noescape>
-document.querySelector('.cache-article').addEventListener('click', function(event) {
-  event.preventDefault();
+document.querySelector('.cache-article')
+    .addEventListener('click', function(event) {
+        event.preventDefault();
 
-  var id = this.dataset.articleId;
-  caches.open('mysite-article-' + id).then(function(cache) {
-    fetch('/get-article-urls?id=' + id).then(function(response) {
-      // /get-article-urls returns a JSON-encoded array of
-      // resource URLs that a given article depends on
-      return response.json();
-    }).then(function(urls) {
-      cache.addAll(urls);
+        var id = this.dataset.articleId;
+        caches.open('mysite-article-' + id)
+            .then(function(cache) {
+                fetch('/get-article-urls?id=' + id)
+                .then(function(response) {
+                    // returns a JSON-encoded array of resource
+                    // URLs that a given article depends on
+                    return response.json();
+                }).then(function(urls) {
+                    cache.addAll(urls);
+                });
+        });
     });
-  });
-});
                 </code></pre>
                 <p>
                     <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Code from Jake Archibald`s offline cookbook</a>
@@ -535,7 +593,7 @@ document.querySelector('.cache-article').addEventListener('click', function(even
             </section>
 
 
-
+            
 
 
         </div>
