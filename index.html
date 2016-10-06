@@ -287,6 +287,50 @@ export class HelloComponent {
             </section>
 
 
+            <!--https://www.html5rocks.com/en/tutorials/offline/storage/-->
+            <section>
+                <h2>Web storage</h2>
+                <h3>localStorage</h3>
+                <ul class="no-bullets">
+                    <li>Storing smaller amounts of data</li>
+                    <li>Single persistent object called localStorage</li>
+                    <li>NoSQL key-value store</li>
+                    <li>Sync API</li>
+                    <li>Poor performance for complex data</li>
+                </ul>
+                <h3>sessionStorage</h3>
+                <ul class="no-bullets">
+                    <li>similar to localStorage</li>
+                    <li>cleans when window/tab closed</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>IndexedDB</h3>
+                <ul class="no-bullets">
+                    <li>Low-level API for client-side storage</li>
+                    <li>For significant amounts of structured data</li>
+                    <li>High performance searches of this data</li>
+                    <li>Transactional database system</li>
+                    <li>JavaScript-based object-oriented database</li>
+                    <li>Operations done async</li>
+                    <li>Famous from complex API</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>'Cache' interface</h3>
+                <ul class="no-bullets">
+                    <li>Storage mechanism for Request / Response object pairs</li>
+                    <li>Exposed to window and workers</li>
+                    <li>Items do not get updated unless explicitly requested</li>
+                    <li>Items don’t expire unless deleted</li>
+                    <li>Origin can have multiple, named Cache objects</li>
+                    <li>You as a dev need to purge Cache entries</li>
+                </ul>
+            </section>
+
+
 
             <section data-background-color="var(--secondary-color)">
                 <h1 style="font-size: 2.0em; margin-bottom: 0.5em;" class="fallbackColor" >Service Workers</h1>
@@ -593,8 +637,117 @@ document.querySelector('.cache-article')
             </section>
 
 
-            
+            <section>
+                <h1>Push Notifications</h1>
+                <img class="plain" style="max-height: 12em;" src="/src/img/cc-good.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/" class="credits" target="_blank">Image from Google Web Fundamentals</a>
+                </p>
+            </section>
 
+
+            <section>
+                <h1 style="font-size: 2,5em; margin-bottom: 0em;" class="fallbackColor" >Application</h1>
+                <h1 style="font-size: 4.5em; margin-bottom: 0em;" class="secondaryColor" >shell</h1>
+                <h1 style="font-size: 2.4em;" class="primaryColor" >architecture</h1>
+            </section>
+
+
+            <section>
+                <img class="plain" style="max-height: 12em;" src="/src/img/appshell-1.jpg">
+                <p>
+                    <a href="https://developers.google.com/web/updates/2015/11/app-shell" class="credits" target="_blank">Image from Google Web Updates</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>Application shell should:</h3>
+                <ul>
+                    <li>load fast</li>
+                    <li>be cached</li>
+                    <li>dynamically display content</li>
+                    <li>be a replacment for bundles publishe din store for native apps</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h3>Web App Install Banner</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/add-to-home-screen.gif">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/engage-and-retain/app-install-banners/" class="credits" target="_blank">Image from Google Web Fundamentals</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>Web Banner criteria</h3>
+                <ul>
+                    <li>Has a web app manifest</li>
+                    <li>Has a service worker registered</li>
+                    <li>Is served over HTTPS</li>
+                    <li>Is visited at least twice, with at least five minutes between visits</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h3>Sample manifest.json</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+{
+  "short_name": "AirHorner",
+  "name": "Kinlan's AirHorner of Infamy",
+  "icons": [{
+      "src": "launcher-icon-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+  ...
+    {
+      "src": "launcher-icon-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }],
+  "start_url": "index.html?launcher=true"
+}
+                </code></pre>
+                <pre><code class="html">
+<link rel="manifest" href="/manifest.json">
+                </code></pre>
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/" class="credits" target="_blank">Code from Google Web Fundamentals</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>What can I tell the browser?</h3>
+                <ul>
+                    <li>Home screen Icon</li>
+                    <li>Add a splash screen</li>
+                    <li>Set the launch style</li>
+                    <li>...and more</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Native vs browser launch style</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/manifest-display-options.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/" class="credits" target="_blank">Image from Google Web Fundamentals</a>
+                </p>
+            </section>
+
+            <section data-background-iframe="https://pwa.rocks/">
+                <h1 style="font-size: 3.0em;" class="fallbackColor" >Anyone really does <a href="https://pwa.rocks/">that</a>?</h1>
+            </section>
+
+            <section>
+                <a href="https://wiki-offline.jakearchibald.com/wiki/Rick_and_Morty">
+                    <img class="plain" style="max-height: 15em;" src="/src/img/wikipedia.jpg">
+                </a>
+                <p>
+                    <a href="https://developers.google.com/web/updates/2015/11/app-shell" class="credits" target="_blank">Image from Google Web Updates</a>
+                </p>
+            </section>
 
         </div>
     </div>
