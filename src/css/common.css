@@ -76,6 +76,10 @@ html body {
     color: var(--link-color);
 }
 
+.reveal .slides a.credits {
+    font-size: 0.75em;
+}
+
 .reveal .slides button {
     background: var(--bg-color);
     padding: 0.5em;

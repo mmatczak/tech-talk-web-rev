@@ -46,15 +46,18 @@ color: var(--main-color);
                 <h1 style="font-size: 4.5em; margin-bottom: -0.25em;" class="primaryColor" >What's</h1>
                 <h1 style="font-size: 3em; margin-bottom: -0.25em;" class="fallbackColor" >new?</h1>
             </section>
+
+
             <section data-background-color="var(--secondary-color)">
                 <h1 style="font-size: 3em; margin-bottom: -0.25em;" class="fallbackColor">We have</h1>
                 <h1 style="font-size: 3.5em;  text-transform: none" class="flippedColor" >ECMAScript 2015!</h1>
                 <h1 style="font-size: 1.5em; margin-bottom: -0.25em; text-transform: none" class="primaryColor" >Let's go through a few of its highlights...</h1>
             </section>
+            
             <section>
-            <section>
-                <h3>ES2015 Classes</h3>
-                <pre><code class="javascript" data-trim data-noescape>
+                <section>
+                    <h3>ES2015 Classes</h3>
+                    <pre><code class="javascript" data-trim data-noescape>
 class Shape {
     constructor(x, y) {
         this.move(x, y);
@@ -71,13 +74,16 @@ class Rectangle extends Shape {
         this.height = height;
     }
 }
-                </code></pre>
-                <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+                    </code></pre>
+                    <p>
+                        <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                    </p>
 
-            </section>
-            <section>
-                <h3>ES5 Constructor Functions and Prototypal Inheritance</h3>
-                <pre><code class="javascript" data-trim data-noescape>
+                </section>
+
+                <section>
+                    <h3>ES5 Constructor Functions and Prototypal Inheritance</h3>
+                    <pre><code class="javascript" data-trim data-noescape>
 var Shape = function (x, y) {
     this.move(x, y);
 };
@@ -91,16 +97,18 @@ var Rectangle = function (width, height) {
 };
 Rectangle.prototype = new Shape(1, 5);
 var smallRectangle = new Rectangle(10, 20);
-                </code></pre>
-                <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+                    </code></pre>
+                    <p>
+                        <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                    </p>
 
-            </section>
+                </section>
             </section>
 
             <section>
                 <section>
                     <h3>ES2015 Arrow Functions / Lexical <span style="font-family: monospace">this</span></h3>
-                <pre><code class="javascript" data-trim data-noescape>
+                    <pre><code class="javascript" data-trim data-noescape>
 class Classroom {
     constructor() {
         this.students = [
@@ -117,13 +125,15 @@ class Classroom {
         });
     }
 }
-                </code></pre>
-                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
-
+                    </code></pre>
+                    <p>
+                        <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                    </p>
                 </section>
+
                 <section>
                     <h3>ES5 <span style="font-family: monospace">bind()</span></h3>
-                <pre><code class="javascript" data-trim data-noescape>
+                    <pre><code class="javascript" data-trim data-noescape>
 var classroom = {
     students: [
         {name: 'Joe', isMyFriend: false},
@@ -138,14 +148,19 @@ var classroom = {
         }.bind(this)); // binds this to the function context
     }
 };
-                </code></pre>
-                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+                    </code></pre>
+                    <p>
+                        <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                    </p>
 
                 </section>
+
                 <section>
                     <img src="src/img/ben-halpern-tweet.png">
                 </section>
             </section>
+
+
             <section>
                 <section>
                     <h3>ES2015 Promises</h3>
@@ -165,7 +180,9 @@ sayHello('Joe')
         console.log(`Someone says: ${helloToEric}`);
     });
                 </code></pre>
-                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+                <p>
+                    <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                </p>
 
                 </section>
                 <section>
@@ -184,10 +201,14 @@ sayHello('Joe', function (helloToJoe) {
     });
 });
                 </code></pre>
-                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
+                <p>
+                    <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                </p>
 
                 </section>
             </section>
+
+
             <section>
                 <section>
                     <h3>ES2015 Module Exports / Imports</h3>
@@ -202,9 +223,12 @@ import {sayHelloTo} from './greeter';
 
 console.log(sayHelloTo('Joe'));
                 </code></pre>
-                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
-
+                <p>
+                    <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                </p>
                 </section>
+
+
                 <section>
                     <h3>ES5 Namespace Pattern</h3>
                 <pre><code class="javascript" data-trim data-noescape>
@@ -217,13 +241,11 @@ myNamespace.sayHelloTo = function (name) {
 // my-code.js
 console.log(myNamespace.sayHelloTo('Joe'));
                 </code></pre>
-                    <a href="http://es6-features.org/" style="font-size: 0.5em;" target="_blank">Code examples from http://es6-features.org/</a>
-
+                <p>
+                    <a href="http://es6-features.org/" class="credits" target="_blank">Code examples from http://es6-features.org/</a>
+                </p>
                 </section>
             </section>
-
-
-
 
 
 
@@ -271,8 +293,7 @@ console.log(myNamespace.sayHelloTo('Joe'));
             </section>
 
 
-  <!--https://www.html5rocks.com/en/tutorials/workers/basics/-->
-              <section>
+            <section>
                     <h3>Workers</h3>
                     <ul class="no-bullets">
                         <li>Isolated thread</li>
@@ -281,11 +302,11 @@ console.log(myNamespace.sayHelloTo('Joe'));
                         <li>Messages copied, not shared</li>
                         <li>Same Origin</li>
                     </ul>
-              </section>
+            </section>
 
             <section>
                 <h3>Main script:</h3>
-                <pre><code class="js" data-trim data-noescape>
+                <pre><code class="javascript" data-trim data-noescape>
 var worker = new Worker('task.js');
 
 worker.addEventListener('message', function(e) {
@@ -301,11 +322,14 @@ worker.postMessage('Hello World'); // Send data to our worker.
                </code></pre>
 
                 <h3>task.js (the worker)</h3>
-                <pre><code class="js" data-trim data-noescape>
+                <pre><code class="javascript" data-trim data-noescape>
 self.addEventListener('message', function(e) {
   self.postMessage(e.data);
 }, false);
                </code></pre>
+
+                <a href="https://www.html5rocks.com/en/tutorials/workers/basics/" class="credits" target="_blank">Code from https://www.html5rocks.com/en/tutorials/workers/basics/</a>
+               
             </section>
 
               <section>
@@ -342,12 +366,15 @@ self.addEventListener('message', function(e) {
             <section>
                 <h3>On install - as a dependency</h3>
                 <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-install-dep.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Image from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
             <section>
                 <h3>On install - as a dependency</h3>
-                <pre><code class="js" data-trim data-noescape>
+                <pre><code class="javascript" data-trim data-noescape>
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('mysite-static-v3').then(function(cache) {
@@ -361,18 +388,24 @@ self.addEventListener('install', function(event) {
     })
   );
 });
-               </code></pre>
+                </code></pre>
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Code from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
             <section>
                 <h3>On install - not as a dependency</h3>
                 <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-install-not.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Image from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
             <section>
                 <h3>On install - not as a dependency</h3>
-                <pre><code class="js" data-trim data-noescape>
+                <pre><code class="javascript" data-trim data-noescape>
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('mygame-core-v1').then(function(cache) {
@@ -385,19 +418,25 @@ self.addEventListener('install', function(event) {
     })
   );
 });
-               </code></pre>
+                </code></pre>
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Code from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
             <section>
                 <h3>On activate - cleanup</h3>
                 <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-activate.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Image from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
             <section>
                 <h3>On activate - cleanup</h3>
-                <pre><code class="js" data-trim data-noescape>
+                <pre><code class="javascript" data-trim data-noescape>
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -413,19 +452,25 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-               </code></pre>
+                </code></pre>
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Code from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
             <section>
                 <h3>On user interaction</h3>
                 <img class="plain" style="max-height: 12em;" src="/src/img/cm-on-user-interaction.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Image from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
             <section>
                 <h3>On user interaction</h3>
-                <pre><code class="js" data-trim data-noescape>
+                <pre><code class="javascript" data-trim data-noescape>
 document.querySelector('.cache-article').addEventListener('click', function(event) {
   event.preventDefault();
 
@@ -440,7 +485,10 @@ document.querySelector('.cache-article').addEventListener('click', function(even
     });
   });
 });
-               </code></pre>
+                </code></pre>
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Code from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
@@ -458,6 +506,9 @@ document.querySelector('.cache-article').addEventListener('click', function(even
                 <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-cache-then-network.png">
                 <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-generic-fallback.png">
                 <img class="plain" style="max-height: 2.4em;" src="/src/img/ss-sw-side-templating.png">
+                <p>
+                    <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Images from Jake Archibald`s offline cookbook</a>
+                </p>
             </section>
 
 
