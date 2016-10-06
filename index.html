@@ -246,7 +246,25 @@ console.log(myNamespace.sayHelloTo('Joe'));
                 </p>
                 </section>
             </section>
+            <section>
+                <h1 style="font-size: 2em" class="fallbackColor" >We have even more than ES2015...</h1>
+                <img src="src/img/ts-logo.svg" style="border: none; box-shadow: none">
+            </section>
+            <section>
+                <h3>Typical Angular 2 Component</h3>
+                <pre><code class="javascript" data-trim data-noescape>
+import {Input, Component} from '@angular/core';
 
+@Component({
+  selector: 'hello',
+  template: '&lt;h1&gt;Hello {{name}}!&lt;/h1&gt;'
+} as Component)
+export class HelloComponent {
+  @Input()
+  name: string;
+}
+                </code></pre>
+            </section>
 
 
             <section data-background-color="var(--secondary-color)">
