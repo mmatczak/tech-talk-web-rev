@@ -769,11 +769,11 @@ document.querySelector('.cache-article')
         caches.open('mysite-article-' + id)
             .then(function(cache) {
                 fetch('/get-article-urls?id=' + id)
-                .then(function(response) {
-                    return response.json();
-                }).then(function(urls) {
-                    cache.addAll(urls);
-                });
+                    .then(function(response) {
+                        return response.json();
+                    }).then(function(urls) {
+                        cache.addAll(urls);
+                    });
         });
     });
                 </code></pre>
