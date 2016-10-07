@@ -908,12 +908,75 @@ document.querySelector('.cache-article')
                     <a href="https://developers.google.com/web/updates/2015/11/app-shell" class="credits" target="_blank">Image from Google Web Updates</a>
                 </p>
             </section>
+
+
             <section>
-                <h1>HTTP 2</h1>
-                <img class="plain" style="max-height: 15em;" src="/src/img/HTTP_persistent_connection.svg">
-                <p>
-                    <a href="https://en.wikipedia.org/wiki/HTTP_persistent_connection" class="credits" target="_blank">Image from Wikipedia</a>
-                </p>
+                <h2 style="margin-top: -4em;">HTTP 2</h2>
+                <div class="replacement">
+                    <div style="margin-top: 0em;" class="fragment fade-out" data-fragment-index="0">
+                        <img class="plain" style="max-height: 15em;" src="/src/img/HTTP_persistent_connection.svg">
+                         <p>
+                            <a href="https://en.wikipedia.org/wiki/HTTP_persistent_connection" class="credits" target="_blank">Image from Wikipedia</a>
+                        </p>
+                    </div>
+                    <div style="margin-top: -0.5em;" class="fragment fade-in" data-fragment-index="0">
+                        <p>multiplexed downloads over a single connection</p>
+                        <h3 style="margin-top: 1em;">HTTP/2 server push</h3>
+                        <p>allows the server to preemptively send resources to the browser</p>
+                    </div>
+                </div>
+            </section>
+
+
+           <section>    
+
+                <h3 style="margin-top: -4em;">HTTP/1 vs. HTTP/2 </h3>
+                <div class="replacement">
+                    <div style="margin-top: 0em;" class="fragment fade-out" data-fragment-index="0">
+                        <h4>HTTP/1</h4>
+                        <ol>
+                            <li>The browser requests the HTML file.</li>
+                            <li>The server returns the HTML file and the browser starts parsing it.</li>
+                            <li>The browser encounters the <em>&lt;link rel="stylesheet"&gt;</em> tag, and starts a new request for the stylesheet.</li>
+                            <li>The browser receives the stylesheet.</li>
+                        </ol>
+                    </div>
+                    <div style="margin-top: 0em;" class="fragment fade-in" data-fragment-index="0">
+                       <h4>HTTP/2</h4>
+                        <ol>
+                            <li>The browser requests the HTML file.</li>
+                            <li>The server returns the HTML file, and pushes the stylesheet at the same time.</li>
+                            <li>The browser starts parsing the HTML. By the time it encounters the <em>&lt;link rel="stylesheet"&gt;</em>, the stylesheet is already in the cache.</li>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section data-background-color="purple">
+                <h1 style="font-size: 2em; margin-bottom: 0em;" class="fallbackColor" >The</h1>
+                <h1 style="font-size: 4em; margin-bottom: 0em;" class="flippedColor" >PRPL</h1>
+                <h1 style="font-size: 1.5em;" class="tertiaryColor" >pattern</h1>
+            </section>
+
+            <section data-background-color="purple">
+                <h1 style="font-size: 4em; margin-bottom: 0em;" class="flippedColor" >Push</h1>
+                <h3 style="font-size: 2em; margin-bottom: 0em;" class="tertiaryColor" >critical resources for the initial URL route</h3>
+            </section>
+
+            <section data-background-color="purple">
+                <h1 style="font-size: 4em; margin-bottom: 0em;" class="flippedColor" >Render</h1>
+                <h3 style="font-size: 2em; margin-bottom: 0em;" class="tertiaryColor" >initial route</h3>
+            </section>
+
+            <section data-background-color="purple">
+                <h1 style="font-size: 4em; margin-bottom: 0em;" class="flippedColor" >Pre-cache</h1>
+                <h3 style="font-size: 2em; margin-bottom: 0em;" class="tertiaryColor" >remaining routes</h3>
+            </section>
+
+            <section data-background-color="purple">
+                <h1 style="font-size: 4em; margin-bottom: 0em;" class="flippedColor" >Lazy-load</h1>
+                <h3 style="font-size: 2em; margin-bottom: 0em;" class="tertiaryColor" >and create remaining routes on demand</h3>
             </section>
 
             <section>
