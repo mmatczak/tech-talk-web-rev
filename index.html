@@ -21,29 +21,8 @@
             </section>
 
 
-            <section data-background-color="var(--secondary-color)">
-                <h1 style="font-size: 3em; margin-bottom: -0.25em;" class="fallbackColor" >Just</h1>
-                <h1 style="font-size: 4.5em; margin-bottom: -0.25em;" class="primaryColor" >like</h1>
-                <h1 style="font-size: 5em;" class="flippedColor" >that</h1>
-            </section>
-
             <section>
-                <h3>Declaring and using variables</h3>
-                <pre><code class="css" data-trim data-noescape>
-:root {
---main-color: #06c;
-}
-
-#foo h1 {
-color: var(--main-color);
-}
-               </code></pre>
-            </section>
-
-
-
-            <section>
-                <h2>Are we going to talk about frameworks?</h2>
+                <h2 style="margin-bottom: -0.25em">Are we going to talk about frameworks?</h2>
                 <div>
                     <img class="plain" style="max-height: 3.5em; margin: 0.5em" src="/src/img/angular-logo.png">
                     <img class="plain" style="max-height: 3.5em; margin: 0.5em" src="/src/img/react-logo.png">
@@ -791,8 +770,6 @@ document.querySelector('.cache-article')
             .then(function(cache) {
                 fetch('/get-article-urls?id=' + id)
                 .then(function(response) {
-                    // returns a JSON-encoded array of resource
-                    // URLs that a given article depends on
                     return response.json();
                 }).then(function(urls) {
                     cache.addAll(urls);
@@ -1098,6 +1075,8 @@ document.querySelector('.cache-article')
                 <ul>
                     <li>Window.requestAnimationFrame()</li>
                     <li>will-change CSS property</li>
+                    <li>CSS custom properties</li>
+                    <li>Web RTC</li>
                 </ul>
             </section>
 
