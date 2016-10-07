@@ -301,7 +301,119 @@ export class HelloComponent {
 }
                 </code></pre>
             </section>
+            <section>
+                <img src="src/img/tools.png" style="border: none; box-shadow: none" height="600px">
+            </section>
 
+            <section>
+                <img src="src/img/web-components-logo.svg" style="border: none; box-shadow: none">
+                <h1 style="font-size: 3em;" class="primaryColor" >Web&nbsp;Components</h1>
+                <h1 style="font-size: 1.5em; margin-bottom: -0.25em; text-transform: none" class="fallbackColor" >Dreams do come true...</h1>
+            </section>
+            <section>
+                <section>
+                    <div>
+                        <img src="src/img/icon-templates.png" style="border: none; box-shadow: none;">
+                        <h1>Templates</h1>
+                    </div>
+                </section>
+                <section>
+                <pre><code class="html" data-trim data-noescape>
+&lt;template id="my-template"&gt;
+    &lt;div&gt;
+        &lt;p&gt;This is my template&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+                </code></pre>
+                <pre style="margin-top: 30px;"><code class="javascript" data-trim data-noescape>
+var template = document.querySelector('#my-template'),
+    clone = document.importNode(template.content, true);
+
+document.body.appendChild(clone);
+                </code></pre>
+                    <a href="src/web-components/templates.html" target="_blank">Demo >></a>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div>
+                        <img src="src/img/icon-shadowdom.png" style="border: none; box-shadow: none;">
+                        <h1>Shadow DOM</h1>
+                    </div>
+                </section>
+                <section>
+                <pre><code class="html" data-trim data-noescape>
+&lt;template id="my-template"&gt;
+    &lt;div&gt;&lt;p&gt;This is my template&lt;/p&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;div id="john"&gt;
+    &lt;p>John&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="eric"&gt;
+    &lt;p&gt;Eric&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+                <pre style="margin-top: 30px;"><code class="javascript" data-trim data-noescape>
+var template = document.querySelector('#my-template'),
+    host = document.querySelector('#eric'),
+    root = host.attachShadow({mode: 'closed'}),
+    clone = document.importNode(template.content, true);
+
+root.appendChild(clone);
+                </code></pre>
+                    <a href="src/web-components/shadow-dom.html" target="_blank">Demo >></a>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div>
+                        <img src="src/img/icon-customelements.png" style="border: none; box-shadow: none;">
+                        <h1>Custom Elements</h1>
+                    </div>
+                </section>
+                <section>
+                <pre><code class="html" data-trim data-noescape>
+&lt;my-template&gt;&lt;/my-template&gt;
+&lt;my-template&gt;&lt;/my-template&gt;
+&lt;my-template&gt;&lt;/my-template&gt;
+
+&lt;template id="my-template"&gt;
+    &lt;div&gt;&lt;p&gt;This is my template&lt;/p&gt;&lt;/div&gt;
+&lt;/template&gt;
+                </code></pre>
+                <pre style="margin-top: 30px;"><code class="javascript" data-trim data-noescape>
+var myTemplateHtmlElement = Object.create(HTMLElement.prototype);
+
+myTemplateHtmlElement.createdCallback = function () {
+    var template = document.querySelector('#my-template'),
+        clone = document.importNode(template.content, true),
+        root = this.attachShadow({mode: 'closed'});
+        root.appendChild(clone);
+    };
+document.registerElement("my-template",
+                    {prototype: myTemplateHtmlElement});
+                </code></pre>
+                    <a href="src/web-components/custom-elements.html" target="_blank">Demo >></a>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div>
+                        <img src="src/img/icon-htmlimports.png" style="border: none; box-shadow: none;">
+                        <h1>HTML Imports</h1>
+                    </div>
+                </section>
+                <section>
+                <pre><code class="html" data-trim data-noescape>
+&lt;my-template&gt;&lt;/my-template&gt;
+&lt;my-template&gt;&lt;/my-template&gt;
+&lt;my-template&gt;&lt;/my-template&gt;
+
+&lt;link rel="import" href="my-template/my-template.html"&gt;
+                </code></pre>
+                    <a href="src/web-components/html-imports.html" target="_blank">Demo >></a>
+                </section>
+            </section>
 
             <section data-background-color="var(--secondary-color)">
                 <h1 style="font-size: 4.9em; margin-bottom: -0.25em;" class="fallbackColor" >Offline</h1>
