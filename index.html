@@ -331,7 +331,7 @@ var template = document.querySelector('#my-template'),
 
 document.body.appendChild(clone);
                 </code></pre>
-                    <a href="src/web-components/templates.html" target="_blank">Demo >></a>
+                    <a href="src/web-components/templates.html" target="_blank">Demo&nbsp;&lt;/&gt;</a>
                 </section>
             </section>
             <section>
@@ -361,7 +361,7 @@ var template = document.querySelector('#my-template'),
 
 root.appendChild(clone);
                 </code></pre>
-                    <a href="src/web-components/shadow-dom.html" target="_blank">Demo >></a>
+                    <a href="src/web-components/shadow-dom.html" target="_blank">Demo&nbsp;&lt;/&gt;</a>
                 </section>
             </section>
             <section>
@@ -393,7 +393,7 @@ myTemplateHtmlElement.createdCallback = function () {
 document.registerElement("my-template",
                     {prototype: myTemplateHtmlElement});
                 </code></pre>
-                    <a href="src/web-components/custom-elements.html" target="_blank">Demo >></a>
+                    <a href="src/web-components/custom-elements.html" target="_blank">Demo&nbsp;&lt;/&gt;</a>
                 </section>
             </section>
             <section>
@@ -405,14 +405,48 @@ document.registerElement("my-template",
                 </section>
                 <section>
                 <pre><code class="html" data-trim data-noescape>
-&lt;my-template&gt;&lt;/my-template&gt;
-&lt;my-template&gt;&lt;/my-template&gt;
-&lt;my-template&gt;&lt;/my-template&gt;
-
-&lt;link rel="import" href="my-template/my-template.html"&gt;
+&lt;head&gt;
+    &lt;link rel="import" href="my-template/my-template.html"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;my-template&gt;&lt;/my-template&gt;
+    &lt;my-template&gt;&lt;/my-template&gt;
+    &lt;my-template&gt;&lt;/my-template&gt;
+&lt;/body&gt;
                 </code></pre>
-                    <a href="src/web-components/html-imports.html" target="_blank">Demo >></a>
+                    <a href="src/web-components/html-imports.html" target="_blank">Demo&nbsp;&lt;/&gt;</a>
                 </section>
+            </section>
+
+            <section>
+                <h2 class="fallbackColor" style="text-transform: none;">We're not supposed to talk about frameworks, are we?</h2>
+                <h1 style="font-size: 2.5em; margin-bottom: -0.25em;" class="secondaryColor" >No, we aren't, but...</h1>
+            </section>
+
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 5em; margin-bottom: -0.4em;" class="fallbackColor" >Let's</h1>
+                <h1 style="font-size: 4.8em; margin-bottom: -0.25em;" class="primaryColor" >Get Rid Of</h1>
+                <h1 style="font-size: 3em;" class="flippedColor" >the Boilerplate</h1>
+            </section>
+
+            <section>
+                <img src="src/img/polymer-logo.png" style="border: none; box-shadow: none" height="100px">
+                <pre><code class="html" data-trim data-noescape>
+&lt;link rel="import"
+      href="https://polygit.org/components/polymer/polymer.html"&gt;
+&lt;dom-module id="my-template"&gt;
+    &lt;template>
+        &lt;div&gt;&lt;p&gt;This is my template&lt;/p&gt;&lt;/div&gt;
+    &lt;/template&gt;
+
+    &lt;script&gt;
+        Polymer({
+            is: "my-template"
+        });
+    &lt;/script&gt;
+&lt;/dom-module&gt;
+                </code></pre>
+                <a href="src/web-components/polymer.html" target="_blank">Demo&nbsp;&lt;/&gt;</a>
             </section>
 
             <section data-background-color="var(--secondary-color)">
