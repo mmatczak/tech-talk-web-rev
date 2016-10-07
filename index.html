@@ -43,7 +43,7 @@ color: var(--main-color);
 
 
             <section>
-                <h2>Will we talk about frameworks?</h2>
+                <h2>Are we going to talk about frameworks?</h2>
                 <div>
                     <img class="plain" style="max-height: 3.5em; margin: 0.5em" src="/src/img/angular-logo.png">
                     <img class="plain" style="max-height: 3.5em; margin: 0.5em" src="/src/img/react-logo.png">
@@ -63,7 +63,7 @@ color: var(--main-color);
 
             <section>
                 <h2>Nope ...</h2>
-                <h2>we will talk about the platform</h2>
+                <h2>we are going to talk about the platform</h2>
                 <div>
                     <img class="plain" style="max-height: 4em; margin: 0.5em" src="/src/img/chrome-icon.png">
                     <img class="plain" style="max-height: 4em; margin: 0.5em" src="/src/img/firefox-logo.png">
@@ -538,7 +538,7 @@ document.registerElement("my-template",
                 <ul class="no-bullets">
                     <li>Give developers the moving parts to solve their problems</li>
                     <li>Alow to create own caching patterns</li>
-                    <li>Can be only used over HTTPS (excluding localhost)</li>
+                    <li>Can only be used over HTTPS (excluding localhost)</li>
                     <li>Hijack connections</li>
                     <li>Fabricate, and filter responses</li>
                 </ul>
@@ -963,7 +963,6 @@ document.querySelector('.cache-article')
 
 
            <section>    
-
                 <h3 style="margin-top: -4em;">HTTP/1 vs. HTTP/2 </h3>
                 <div class="replacement">
                     <div style="margin-top: 0em;" class="fragment fade-out" data-fragment-index="0">
@@ -976,14 +975,14 @@ document.querySelector('.cache-article')
                         </ol>
                     </div>
                     <div style="margin-top: 0em;" class="fragment fade-in" data-fragment-index="0">
-                       <h4>HTTP/2</h4>
+                        <h4>HTTP/2</h4>
                         <ol>
                             <li>The browser requests the HTML file.</li>
                             <li>The server returns the HTML file, and pushes the stylesheet at the same time.</li>
                             <li>The browser starts parsing the HTML. By the time it encounters the <em>&lt;link rel="stylesheet"&gt;</em>, the stylesheet is already in the cache.</li>
+                        </ol>
                     </div>
                 </div>
-
             </section>
 
 
@@ -1013,6 +1012,8 @@ document.querySelector('.cache-article')
                 <h3 style="font-size: 2em; margin-bottom: 0em;" class="tertiaryColor" >and create remaining routes on demand</h3>
             </section>
 
+
+
             <section>
                 <h1>
                     <img style="max-height: 1.5em;" class="plain" src="/src/img/chrome-icon.png">
@@ -1020,6 +1021,87 @@ document.querySelector('.cache-article')
                     <span class="inline primaryColor">Tools</span>
                 </h1>
             </section>
+
+
+            <section>
+                <h3>Inspect / Live Edit</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/elements.png">
+                <p>
+                    <a href="https://developers.google.com/web/tools/chrome-devtools/" class="credits" target="_blank">Chrome Developer Tools documentation</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>Analyse network traffic</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/network.png">
+                <p>
+                    <a href="https://developers.google.com/web/tools/chrome-devtools/" class="credits" target="_blank">Chrome Developer Tools documentation</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>Debug</h3>
+                <img class="plain" style="max-height: 12em;" src="/src/img/sources.png">
+                <p>
+                    <a href="https://developers.google.com/web/tools/chrome-devtools/" class="credits" target="_blank">Chrome Developer Tools documentation</a>
+                </p>
+            </section>
+
+            <section>
+                <h3>Profile</h3>
+               
+                <h3 style="margin-top: -7.5em;">Profiling</h3>
+                <div class="replacement">
+                    <div style="margin-top: 0em;" class="fragment fade-out" data-fragment-index="0">
+                        <img class="plain" style="max-height: 12em;" src="/src/img/timeline.png">
+                        <p>
+                            <a href="https://developers.google.com/web/tools/chrome-devtools/" class="credits" target="_blank">Chrome Developer Tools documentation</a>
+                        </p>
+                    </div>
+                    <div style="margin-top: 0em;" class="fragment fade-in" data-fragment-index="0">
+                        <img class="plain" style="max-height: 12em;" src="/src/img/cpu-profile.png">
+                        <p>
+                            <a href="https://developers.google.com/web/tools/chrome-devtools/" class="credits" target="_blank">Chrome Developer Tools documentation</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>And much more ...</h3>
+                <ul>
+                    <li>Console API</li>
+                    <li>Working with Service workers</li>
+                    <li>Web app manifest adjustment</li>
+                    <li>Device mode</li>
+                    <li>Cache/Storage inspection</li>
+                    <li>...</li>
+                </ul>
+            </section>
+
+
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 4em; margin-bottom: -0.25em;" class="flippedColor" >WHOA!</h1>
+                <h1 style="font-size: 2.8em; margin-bottom: -0.2em;" class="fallbackColor" >That was</h1>
+                <h1 style="font-size: 2em;" class="primaryColor" >quick, right?</h1>
+            </section>
+
+            
+
+            <section data-background-image="/src/img/web-api.png" data-background-size="75%">
+                <h2 style="font-size: 2.8em; margin-bottom: -0.2em;" class="primaryColor" >But there is still much <a href="https://developer.mozilla.org/en-US/docs/Web/API">more</a> :P</h2>
+            </section>
+
+
+
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 2em; margin-bottom: 0em;" class="fallbackColor" >Thank</h1>
+                <h1 style="font-size: 2.5em; margin-bottom: 0em;" class="primaryColor" >you</h1>
+                <h1 style="font-size: 3em;" class="flippedColor" >for your attention</h1>
+            </section>
+
+
+
 
         </div>
     </div>
