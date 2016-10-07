@@ -439,11 +439,11 @@ document.registerElement("my-template",
             <section>
                 <h3>AppCache lottery</h3>
                 <ul class="no-bullets">
-                    <li>Files always come from cache</li>
-                    <li>Application updates only on manifest content change</li>
-                    <li>Additional not alternative cache</li>
-                    <li>Non-cached resources do not load on cached page</li>
-                    <li>lack of JavaScript API</li>
+                    <li>Files <span class="secondaryColor">always</span> come from cache</li>
+                    <li>Application updates <span class="secondaryColor">only</span> on manifest <span class="secondaryColor">content change</span></li>
+                    <li>Additional <span class="secondaryColor">not</span> alternative cache</li>
+                    <li><span class="secondaryColor">Non-cached</span> resources do <span class="secondaryColor">not load</span> on <span class="secondaryColor">cached</span> page</li>
+                    <li><strong><span class="secondaryColor">Lack of JavaScript API</span></strong></li>
                 </ul>
             </section>
 
@@ -459,19 +459,19 @@ document.registerElement("my-template",
                             <div class="fragment fade-out" data-fragment-index="1">
                                 <h3>localStorage</h3>
                                 <ul class="no-bullets">
-                                    <li>Storing smaller amounts of data</li>
-                                    <li>Single persistent object called localStorage</li>
-                                    <li>NoSQL key-value store</li>
+                                    <li>Storing <span class="secondaryColor">smaller</span> amounts of data</li>
+                                    <li><span class="secondaryColor">Single</span> persistent object called localStorage</li>
+                                    <li><span class="secondaryColor">NoSQL</span> key-value store</li>
                                     <li>Sync API</li>
-                                    <li>Poor performance for complex data</li>
+                                    <li><span class="secondaryColor">Poor</span> performance for <span class="secondaryColor">complex</span> data</li>
                                 </ul>
                             </div>
                         </div>
                         <div style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="1">
                             <h3>sessionStorage</h3>
                             <ul class="no-bullets">
-                                <li>similar to localStorage</li>
-                                <li>cleans when window/tab closed</li>
+                                <li>Similar to <span class="secondaryColor">localStorage</span></li>
+                                <li><span class="secondaryColor">Cleans</span> when window/tab closed</li>
                             </ul>
                         </div>
                     </div>
@@ -481,25 +481,25 @@ document.registerElement("my-template",
             <section>
                 <h3>IndexedDB</h3>
                 <ul class="no-bullets">
-                    <li>Low-level API for client-side storage</li>
-                    <li>For significant amounts of structured data</li>
-                    <li>High performance searches of this data</li>
-                    <li>Transactional database system</li>
-                    <li>JavaScript-based object-oriented database</li>
-                    <li>Operations done async</li>
-                    <li>Famous from complex API</li>
+                    <li><span class="secondaryColor">Low-level API</span> for client-side storage</li>
+                    <li>For <span class="secondaryColor">significant</span> amounts of <span class="secondaryColor">structured</span> data</li>
+                    <li><span class="secondaryColor">High performance</span> searches of this data</li>
+                    <li><span class="secondaryColor">Transactional</span> database system</li>
+                    <li>JavaScript based <span class="secondaryColor">object-oriented</span> database</li>
+                    <li>Operations done <span class="secondaryColor">async</span></li>
+                    <li>Famous from <strong><span class="secondaryColor">complex</span></strong> API</li>
                 </ul>
             </section>
 
             <section>
                 <h3>'Cache' interface</h3>
                 <ul class="no-bullets">
-                    <li>Storage mechanism for Request / Response object pairs</li>
-                    <li>Exposed to window and workers</li>
-                    <li>Items do not get updated unless explicitly requested</li>
-                    <li>Items don’t expire unless deleted</li>
-                    <li>Origin can have multiple, named Cache objects</li>
-                    <li>You as a dev need to purge Cache entries</li>
+                    <li>Storage mechanism for <span class="secondaryColor">Request / Response object pairs</span></li>
+                    <li>Exposed to <span class="secondaryColor">window</span> and <span class="secondaryColor">workers</span></li>
+                    <li>Items <span class="secondaryColor">do not</span> get updated <span class="secondaryColor"> unless explicitly</span> requested</li>
+                    <li>Items <span class="secondaryColor">don’t expire</span> unless deleted</li>
+                    <li>Origin can have <span class="secondaryColor">multiple</span>, named Cache objects</li>
+                    <li><span class="secondaryColor">You</span> as a dev need to <span class="secondaryColor">purge</span> Cache entries</li>
                 </ul>
             </section>
 
@@ -515,9 +515,9 @@ document.registerElement("my-template",
             <section>
                 <h3>Service Workers</h3>
                 <ul class="no-bullets">
-                    <li>Give developers the moving parts to solve their problems</li>
-                    <li>Alow to create own caching patterns</li>
-                    <li>Can only be used over HTTPS (excluding localhost)</li>
+                    <li>Give developers the <span class="secondaryColor">moving parts</span> to solve their problems</li>
+                    <li>Alow to create <span class="secondaryColor">own caching patterns</span></li>
+                    <li>Can only be used over <span class="secondaryColor">HTTPS</span> (excluding localhost)</li>
                     <li>Hijack connections</li>
                     <li>Fabricate, and filter responses</li>
                 </ul>
@@ -535,9 +535,9 @@ document.registerElement("my-template",
                     <h3>Workers</h3>
                     <ul class="no-bullets">
                         <li>Isolated thread</li>
-                        <li>Code contained in separate file (async download)</li>
-                        <li>Communication via message passing - postMessage()</li>
-                        <li>Messages copied, not shared</li>
+                        <li>Code contained in <span class="secondaryColor">separate file</span> (async download)</li>
+                        <li>Communication via message passing - <span class="secondaryColor">postMessage()</span></li>
+                        <li>Messages <span class="secondaryColor">copied</span>, not shared</li>
                         <li>Same Origin</li>
                     </ul>
             </section>
