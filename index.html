@@ -288,20 +288,32 @@ export class HelloComponent {
 
             <!--https://www.html5rocks.com/en/tutorials/offline/storage/-->
             <section>
-                <h2>Web storage</h2>
-                <h3>localStorage</h3>
-                <ul class="no-bullets">
-                    <li>Storing smaller amounts of data</li>
-                    <li>Single persistent object called localStorage</li>
-                    <li>NoSQL key-value store</li>
-                    <li>Sync API</li>
-                    <li>Poor performance for complex data</li>
-                </ul>
-                <h3>sessionStorage</h3>
-                <ul class="no-bullets">
-                    <li>similar to localStorage</li>
-                    <li>cleans when window/tab closed</li>
-                </ul>
+                    <h2 style="margin-top: -5em;">Web storage</h2>
+                    <div class="replacement">
+                        <div style="margin-top: 4em;" class="fragment fade-out" data-fragment-index="0">
+                            <h3>localStorage / sessionStorage</h3>
+                        </div>
+                        <div style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="0">
+                            <div class="fragment fade-out" data-fragment-index="1">
+                                <h3>localStorage</h3>
+                                <ul class="no-bullets">
+                                    <li>Storing smaller amounts of data</li>
+                                    <li>Single persistent object called localStorage</li>
+                                    <li>NoSQL key-value store</li>
+                                    <li>Sync API</li>
+                                    <li>Poor performance for complex data</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="1">
+                            <h3>sessionStorage</h3>
+                            <ul class="no-bullets">
+                                <li>similar to localStorage</li>
+                                <li>cleans when window/tab closed</li>
+                            </ul>
+                        </div>
+                    </div>
+
             </section>
 
             <section>
@@ -765,6 +777,26 @@ document.querySelector('.cache-article')
 
         </div>
     </div>
+ <!--
+
+    https://developers.google.com/web/updates/2015/10/splashscreen?hl=en
+    http://www.slideshare.net/actionscript.it/service-worker-api
+
+    https://dev.opera.com/articles/installable-web-apps/
+    https://dev.opera.com/articles/pwa-desktop/
+    https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/
+
+    https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/
+        
+
+    Intelligent routing / lazy loading /preload routes
+
+    HTTP/2
+
+
+    Extras - web RTC, WebGL willTransform, requestAnimationFrame,
+    https://developer.mozilla.org/en-US/docs/Web/API
+    -->
 
     <script src="/jspm_packages/system.js"></script>
     <script src="/config.js"></script>
