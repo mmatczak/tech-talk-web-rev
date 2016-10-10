@@ -290,3 +290,24 @@ html body {
     opacity: 0.05;
 }
 
+.reveal .slides .cards .material-icons
+{
+    font-size: 3em;
+    float: left;
+    color: #ccc;
+}
+
+.reveal .slides .cards p
+{
+    float: left;
+    padding-left: 0.5em;
+}
+
+.reveal .slides .cards
+{
+    width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    float: left;
+}
+
