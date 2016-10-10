@@ -207,3 +207,86 @@ html body {
     letter-spacing: 0;
     font-size: 16px;
 }
+
+
+ /*--------- Other stuff ---------*/
+
+.reveal .slides .action-box
+{
+    z-index: 10;
+	padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+	border-radius: 10px;
+	color: #FFF;
+	text-decoration: none;	
+}
+
+.reveal .slides section.agenda .action-box.disabled
+{
+    opacity: 0.1;
+}
+
+.reveal .slides .blue-box
+{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+.reveal .slides .red-box
+{
+	background-color: #E74C3C;
+	border-bottom: 5px solid #BD3E31;
+	text-shadow: 0px -2px #BD3E31;
+}
+
+.reveal .slides .green-box
+{
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+}
+
+.reveal .slides .yellow-box
+{
+	background-color: #F2CF66;
+	border-bottom: 5px solid #D1B358;
+	text-shadow: 0px -2px #D1B358;
+}
+
+.reveal .slides .purple-box
+{
+	background-color: #793acf;
+	border-bottom: 5px solid #462572;
+	text-shadow: 0px -2px #462572;
+}
+
+.reveal .slides .grey-box
+{
+	background-color: #aaa;
+	text-shadow: 0px -2px #888;
+    margin:0;
+	padding: 10px 40px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.reveal .slides .grey-bg
+{
+    opacity: 0.6;
+	background-color: #ccc;
+	border: 5px solid #888;
+    height:90%; 
+    margin:0;
+}
+
+.reveal .slides section.agenda .disabled .grey-box
+{
+    opacity: 0.2;
+}
+
+.reveal .slides section.agenda .disabled .grey-bg
+{
+    opacity: 0.05;
+}
+
