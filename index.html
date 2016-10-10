@@ -42,8 +42,8 @@
             </section>
 
             <section>
-                <h2>Nope ...</h2>
-                <h2>we are going to talk about the platform</h2>
+                <h2>Not much ...</h2>
+                <h2>we are going to concentrate on the platform</h2>
                 <div>
                     <img class="plain" style="max-height: 4em; margin: 0.5em" src="/src/img/chrome-icon.png">
                     <img class="plain" style="max-height: 4em; margin: 0.5em" src="/src/img/firefox-logo.png">
@@ -473,8 +473,8 @@ document.registerElement("my-template",
             </section>
 
             <section>
-                <h2 class="fallbackColor" style="text-transform: none;">We're not supposed to talk about frameworks, are we?</h2>
-                <h1 style="font-size: 2.5em; margin-bottom: -0.25em;" class="secondaryColor" >No, we aren't, but...</h1>
+                <h2 class="fallbackColor" style="text-transform: none;">We`re supposed to avoid talking about frameworks, are we?</h2>
+                <h1 style="font-size: 2.5em; margin-bottom: -0.25em;" class="secondaryColor" >Yes, we are, but...</h1>
             </section>
 
             <section data-background-color="var(--secondary-color)">
@@ -551,8 +551,14 @@ document.registerElement("my-template",
             <section>
                     <h2 style="margin-top: -5em;">Web storage</h2>
                     <div class="replacement">
-                        <div style="margin-top: 4em;" class="fragment fade-out" data-fragment-index="0">
-                            <h3>localStorage / sessionStorage</h3>
+                        <div style="margin-top: 0em;" class="fragment fade-out" data-fragment-index="0">
+                            <!--<h3>localStorage / sessionStorage</h3>-->
+                            <div style="border-top: 15em solid var(--secondary-color); border-right: 25.2em solid transparent;">
+                                <h3 style="position:fixed; top:0em;left:4em;color:white">localStorage</h3>
+                            </div>
+                            <div>
+                                <h3 style="position:fixed; top:3em;left:11em">sessionStorage</h3>
+                            </div>
                         </div>
                         <div style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="0">
                             <div class="fragment fade-out" data-fragment-index="1">
@@ -697,24 +703,24 @@ self.addEventListener('message', function(e) {
               <section>
                     <h3>Features Available to Workers</h3>
                     <ul class="no-bullets">
-                        <li>The navigator object</li>
-                        <li>The location object (read-only)</li>
-                        <li><XMLHttpRequest></XMLHttpRequest></li>
+                        <li>The <span class="secondaryColor">navigator</span> object</li>
+                        <li>The <span class="secondaryColor">location</span> object (read-only)</li>
+                        <li>XMLHttpRequest</li>
                         <li>setTimeout()/clearTimeout() and setInterval()/clearInterval()</li>
-                        <li>The Application Cache</li>
-                        <li>Importing external scripts using the importScripts() method</li>
-                        <li>Spawning other web workers</li>
+                        <li>The Application <span class="secondaryColor">Cache</span></li>
+                        <li>Importing <span class="secondaryColor">external scripts</span> using the importScripts() method</li>
+                        <li><span class="secondaryColor">Spawning other</span> web workers</li>
                     </ul>
               </section>
 
               <section>
                     <h3>Workers do NOT have access to:</h3>
                     <ul class="no-bullets">
-                        <li>The DOM (it's not thread-safe)</li>
-                        <li>The window object</li>
-                        <li>The document object</li>
-                        <li>The parent object</li>
-                        <li>will not run locally (e.g. from file://)</li>
+                        <li>The <span class="secondaryColor">DOM</span> (it's not thread-safe)</li>
+                        <li>The <span class="secondaryColor">window</span> object</li>
+                        <li>The <span class="secondaryColor">document</span> object</li>
+                        <li>The <span class="secondaryColor">parent</span> object</li>
+                        <li>will <span class="secondaryColor">not run locally</span> (e.g. from file://)</li>
                     </ul>
               </section>
 
@@ -1010,10 +1016,10 @@ document.querySelector('.cache-article')
             <section>
                 <h3>Web Banner criteria</h3>
                 <ul>
-                    <li>Has a web app manifest</li>
-                    <li>Has a service worker registered</li>
-                    <li>Is served over HTTPS</li>
-                    <li>Is visited at least twice, with at least five minutes between visits</li>
+                    <li>Has a <span class="secondaryColor">web app manifest</span></li>
+                    <li>Has a <span class="secondaryColor">service worker registered</span></li>
+                    <li>Is served over <span class="secondaryColor">HTTPS</span></li>
+                    <li>Is visited <span class="secondaryColor">at least twice</span>, with at least <span class="secondaryColor">five minutes</span> between visits</li>
                 </ul>
             </section>
 
@@ -1088,9 +1094,9 @@ document.querySelector('.cache-article')
                         </p>
                     </div>
                     <div style="margin-top: -0.5em;" class="fragment fade-in" data-fragment-index="0">
-                        <p>multiplexed downloads over a single connection</p>
+                        <p><span class="secondaryColor">Multiplexed</span> downloads over a <span class="secondaryColor">single</span> connection</p>
                         <h3 style="margin-top: 1em;">HTTP/2 server push</h3>
-                        <p>allows the server to preemptively send resources to the browser</p>
+                        <p>Allows the server to <span class="secondaryColor">preemptively send resources</span> to the browser</p>
                     </div>
                 </div>
             </section>
@@ -1102,18 +1108,18 @@ document.querySelector('.cache-article')
                     <div style="margin-top: 0em;" class="fragment fade-out" data-fragment-index="0">
                         <h4>HTTP/1</h4>
                         <ol>
-                            <li>The browser requests the HTML file.</li>
-                            <li>The server returns the HTML file and the browser starts parsing it.</li>
-                            <li>The browser encounters the <em>&lt;link rel="stylesheet"&gt;</em> tag, and starts a new request for the stylesheet.</li>
-                            <li>The browser receives the stylesheet.</li>
+                            <li>The browser requests the <span class="secondaryColor">HTML file</span>.</li>
+                            <li>The server returns the HTML file and the <span class="secondaryColor">browser starts parsing</span it.</li>
+                            <li>The browser encounters the <strong><em>&lt;link rel="stylesheet"&gt;</em></strong> tag, and <span class="secondaryColor">starts a new request</span> for the stylesheet.</li>
+                            <li>The browser <span class="secondaryColor">receives the stylesheet</span>.</li>
                         </ol>
                     </div>
                     <div style="margin-top: 0em;" class="fragment fade-in" data-fragment-index="0">
                         <h4>HTTP/2</h4>
                         <ol>
-                            <li>The browser requests the HTML file.</li>
-                            <li>The server returns the HTML file, and pushes the stylesheet at the same time.</li>
-                            <li>The browser starts parsing the HTML. By the time it encounters the <em>&lt;link rel="stylesheet"&gt;</em>, the stylesheet is already in the cache.</li>
+                            <li>The browser requests the <span class="secondaryColor">HTML file</span>.</li>
+                            <li>The server returns the <span class="secondaryColor">HTML file</span>, and <span class="secondaryColor">pushes</span> the stylesheet <span class="secondaryColor">at the same time</span>.</li>
+                            <li>The browser starts parsing the HTML. By the time it encounters the <strong><em>&lt;link rel="stylesheet"&gt;</em></strong>, the stylesheet is <span class="secondaryColor">already in the cache</span>.</li>
                         </ol>
                     </div>
                 </div>
@@ -1238,14 +1244,15 @@ document.querySelector('.cache-article')
             </section>
 
 
+            <section data-background-color="var(--secondary-color)">
+                <h1 style="font-size: 9em;" class="fallbackColor" >Q<span class="flippedColor">&</span>A</h1>
+            </section>
 
             <section data-background-color="var(--secondary-color)">
                 <h1 style="font-size: 4em; margin-bottom: -0.5em;" class="fallbackColor" >Thank</h1>
                 <h1 style="font-size: 6.5em; margin-bottom: 0em;" class="primaryColor" >you</h1>
                 <h1 style="font-size: 1.5em;" class="flippedColor" >for your attention!</h1>
             </section>
-
-
 
         </div>
     </div>
