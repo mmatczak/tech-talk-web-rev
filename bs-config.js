@@ -28,6 +28,7 @@ module.exports = {
     'port': 3000,
     'middleware': false,
     'serveStatic': [],
+    'online': false,
     'ghostMode': {
         'clicks': true,
         'scroll': true,
