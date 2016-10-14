@@ -548,7 +548,6 @@ document.registerElement("my-template",
             </section>
            
 
-            <!--http://alistapart.com/article/application-cache-is-a-douchebag-->
             <section>
                 <h3>AppCache lottery</h3>
                 <ul class="no-bullets">
@@ -558,21 +557,27 @@ document.registerElement("my-template",
                     <li><span class="secondaryColor">Non-cached</span> resources do <span class="secondaryColor">not load</span> on <span class="secondaryColor">cached</span> page</li>
                     <li><strong><span class="secondaryColor">Lack of JavaScript API</span></strong></li>
                 </ul>
+
+                <p>
+                    <a href="http://alistapart.com/article/application-cache-is-a-douchebag" class="credits" target="_blank">Full article by Jake Archibald</a>
+                </p>
             </section>
 
 
-            <!--https://www.html5rocks.com/en/tutorials/offline/storage/-->
             <section>
                     <h2 style="margin-top: -5em;">Web storage</h2>
                     <div class="replacement">
                         <div style="margin-top: 0em;" class="fragment fade-out" data-fragment-index="0">
-                            <!--<h3>localStorage / sessionStorage</h3>-->
-                            <div style="border-top: 15em solid var(--secondary-color); border-right: 25.2em solid transparent;">
-                                <h3 style="position:fixed; top:0em;left:4em;color:white">localStorage</h3>
+                            <div style="border-top: 13em solid var(--secondary-color); border-right: 25.2em solid transparent;">
+                                <h3 style="position:fixed; top:-1em;left:4em;color:white">localStorage</h3>
                             </div>
                             <div>
                                 <h3 style="position:fixed; top:3em;left:11em">sessionStorage</h3>
                             </div>
+
+                            <p>
+                                <a href="https://www.html5rocks.com/en/tutorials/offline/storage/" class="credits" target="_blank">Introduction to offline storages</a>
+                            </p>                            
                         </div>
                         <div style="margin-top: 1em;" class="fragment fade-in" data-fragment-index="0">
                             <div class="fragment fade-out" data-fragment-index="1">
@@ -608,6 +613,9 @@ document.registerElement("my-template",
                     <li>Operations done <span class="secondaryColor">async</span></li>
                     <li>Famous from <strong><span class="secondaryColor">complex</span></strong> API</li>
                 </ul>
+                <p>
+                    <a href="https://www.html5rocks.com/en/tutorials/offline/storage/" class="credits" target="_blank">Introduction to offline storages</a>
+                </p>
             </section>
 
             <section>
@@ -941,6 +949,9 @@ document.querySelector('.cache-article')
                 <img class="plain" style="max-height: 2.4em;" src="src/img/ss-sw-side-templating.png">
                 <p>
                     <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" class="credits" target="_blank">Images from Jake Archibald`s offline cookbook</a>
+                </p>
+                <p>
+                    <a href="https://github.com/GoogleChrome/sw-toolbox" class="credits" target="_blank"><strong>SW Toolbox</strong> - no need to dive deep</a>
                 </p>
             </section>
 
